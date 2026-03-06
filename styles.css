@@ -417,6 +417,28 @@ footer {
   font-size: 0.93rem;
 }
 
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: #193032;
+  border: 1px solid rgba(25, 48, 50, 0.22);
+  border-radius: 999px;
+  padding: 0.4rem 0.72rem;
+  background: rgba(255, 250, 242, 0.88);
+  backdrop-filter: blur(6px);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  background: #ffe7cf;
+  border-color: rgba(212, 84, 42, 0.45);
+  color: #7d2f16;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
