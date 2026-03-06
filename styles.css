@@ -30,7 +30,8 @@ body {
 }
 
 .top-nav {
-  width: min(1100px, calc(100vw - 1.6rem));
+  width: calc(100vw - 1rem);
+  max-width: 1500px;
   margin: 0;
   display: flex;
   gap: 0.45rem;
@@ -475,13 +476,15 @@ footer a:focus-visible {
 
 @media (min-width: 780px) {
   body {
-    padding: 5.2rem 1.7rem 3.2rem;
+    padding: 6.9rem 1.7rem 3.2rem;
   }
 
   .top-nav {
-    width: min(1100px, calc(100vw - 3.4rem));
+    width: calc(100vw - 2rem);
+    max-width: 1500px;
     justify-content: center;
     flex-wrap: wrap;
+    row-gap: 0.35rem;
     overflow: visible;
     scrollbar-width: auto;
   }
