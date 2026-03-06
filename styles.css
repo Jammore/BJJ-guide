@@ -24,7 +24,7 @@ body {
     linear-gradient(130deg, #f6f1e8 0%, #f5ebd8 44%, #f3e3c7 100%);
   color: var(--ink);
   min-height: 100vh;
-  padding: 6rem 1.1rem 3rem;
+  padding: 5.5rem 1.1rem 3rem;
   position: relative;
   overflow-x: hidden;
 }
@@ -34,14 +34,16 @@ body {
   margin: 0;
   display: flex;
   gap: 0.45rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   position: fixed;
   left: 50%;
-  top: 0.6rem;
+  top: calc(env(safe-area-inset-top, 0px) + 0.45rem);
   transform: translateX(-50%);
   z-index: 20;
-  max-height: 46vh;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   background: rgba(255, 250, 242, 0.78);
   border: 1px solid rgba(25, 48, 50, 0.15);
   border-radius: 1rem;
@@ -50,16 +52,22 @@ body {
   backdrop-filter: blur(8px);
 }
 
+.top-nav::-webkit-scrollbar {
+  display: none;
+}
+
 .top-nav a {
+  flex: 0 0 auto;
   text-decoration: none;
   color: #193032;
   border: 1px solid rgba(25, 48, 50, 0.22);
   border-radius: 999px;
-  padding: 0.38rem 0.68rem;
+  padding: 0.45rem 0.72rem;
   background: rgba(255, 250, 242, 0.88);
   backdrop-filter: blur(6px);
   font-size: 0.85rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .top-nav a:hover,
@@ -449,8 +457,11 @@ footer {
   }
 
   .top-nav {
-    max-height: none;
+    width: min(1100px, calc(100vw - 3.4rem));
+    justify-content: center;
+    flex-wrap: wrap;
     overflow: visible;
+    scrollbar-width: auto;
   }
 
   .panel {
